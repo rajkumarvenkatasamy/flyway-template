@@ -1,0 +1,10 @@
+services:
+  flyway:
+    image: redgate/flyway
+    container_name: flyway
+    command: migrate -user=${DB_USER} -password=${DB_PASSWORD} -connectRetries=60
+    volumes:
+      - ./drivers/:/flyway/drivers
+      - ./conf/:/flyway/conf
+      - ./sql/:/flyway/sql
+    
