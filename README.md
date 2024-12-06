@@ -14,3 +14,8 @@ In order to locally setup the environment follow these steps:
 3. Modify Flyway configuration file in `./conf` folder with your parameters.
 4. Put your migration files in `./sql` folder.
 5. Open a terminal window and execute `docker compose up -d`.
+
+# Miscellaneous Commands
+
+## To check if a migration can be undone
+docker compose run flyway -user=<db_user_name> -password=<db_user_password> info
